@@ -11,8 +11,8 @@ d:\goProjects\rocketmq-go/
 ├── rocketmq.go          # Go语言实现的RocketMQ SDK 封装 DLL源码
 ├── go.mod               # Go项目依赖管理
 ├── go.sum               # Go依赖版本锁定
-├── build/rocketmq_consumer.dll    # 编译后的Windows DLL文件
-├── build/rocketmq_consumer.h      # DLL头文件
+├── build/rocketmq_service.dll    # 编译后的Windows DLL文件
+├── build/rocketmq_service.h      # DLL头文件
 ├── example/rocketmq_consumer_example.py  # Python消费者使用示例
 └── example/rocketmq_producer_example.py  # Python生产者使用示例
 ```
@@ -68,7 +68,7 @@ Python端无需额外安装依赖，使用标准库即可：
 ### 示例代码
 
 ```python
-from rocketmq_consumer_example import RocketMQConsumer
+from rocketmq_service_example import RocketMQConsumer
 
 # 创建消费者实例
 consumer = RocketMQConsumer()
@@ -102,10 +102,10 @@ consumer.shutdown()
 
 ### 运行长连接模式脚本
 
-直接运行项目中的`rocketmq_consumer_example.py`文件即可启动长连接模式的消息消费：
+直接运行项目中的`rocketmq_service_example.py`文件即可启动长连接模式的消息消费：
 
 ```powershell
-python rocketmq_consumer_example.py
+python rocketmq_service_example.py
 ```
 
 ## API说明
@@ -117,7 +117,7 @@ python rocketmq_consumer_example.py
 ```python
 def __init__(self, dll_path=None):
     # 参数:
-    #   dll_path: RocketMQ消费者DLL的路径，默认为当前目录下的rocketmq_consumer.dll
+    #   dll_path: RocketMQ消费者DLL的路径，默认为当前目录下的rocketmq_service.dll
 ```
 
 #### 加载DLL
